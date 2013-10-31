@@ -105,7 +105,12 @@ public class RationalTest extends TestCase {
 		Rational.setTolerance(a);
 		assertEquals(Rational.getTolerance(), a);
 	}
-	
+
+ // Test for toString
+	public void testToString() {
+		Rational a = new Rational(3,2);
+		assertEquals(a.toString(), "3/2");
+	}	
 
     public void testRoot() {
         Rational s = new Rational( 1, 4 );
@@ -126,3 +131,6 @@ public class RationalTest extends TestCase {
         junit.textui.TestRunner.main(testCaseName);
     }
 }
+
+// java -XX:-UseSplitVerifier -cp emma.jar emmarun -sp . -r html -cp .:junit-4.11.jar RationalTest 
+// Command to run Emma
